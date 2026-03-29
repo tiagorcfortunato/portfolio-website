@@ -26,15 +26,13 @@
 
 % Personal data
 \name{Tiago}{Fortunato}
-\title{\texorpdfstring{Backend Developer \\ Python $|$ FastAPI $|$ REST APIs}{Backend Developer | Python | FastAPI | REST APIs}}
+\title{\texorpdfstring{Full-Stack Developer \& Founder \\ Python $|$ FastAPI $|$ Next.js $|$ TypeScript}{Full-Stack Developer & Founder | Python | FastAPI | Next.js | TypeScript}}
 \address{Berlin, Germany}
 \phone[mobile]{+49~172~238~9909}
 \email{tifortunato.eng@gmail.com}
 \social[linkedin]{tiagorcfortunato}
 \social[github]{tiagorcfortunato}
 \homepage{tiagorcfortunato.vercel.app}
-\extrainfo{\href{https://leetcode.com/u/tiagofortunato/}{leetcode.com/u/tiagofortunato}}
-%\photo[100pt][0.4pt]{picture}
 
 \begin{document}
 \makecvtitle
@@ -43,82 +41,81 @@
 % -----------------------------------------------------------------------
 \section{Profile}
 % -----------------------------------------------------------------------
-\cvitem{}{Backend Developer specializing in Python and FastAPI, building production-grade REST APIs with clean architecture, automated testing, and CI/CD. MSc in Software Engineering (Berlin, 2026) with thesis on road hazard detection using YOLOv8 and a rule-based expert system. Background in Mechanical Engineering — structured, systems-level thinking applied to software. Trilingual (Portuguese, English, German B2). Seeking a Backend / Python Developer role in Berlin or remote.}
+\cvitem{}{Full-Stack Developer and Founder of \textbf{Odys} (odys.com.br) — a WhatsApp-first scheduling SaaS for Brazilian freelance professionals, built entirely solo from architecture to production. I work across the full stack: Python/FastAPI for backend APIs, Next.js 16 + TypeScript for full-stack SaaS, Supabase + Drizzle ORM for data, Stripe for billing, and Docker + Railway + Vercel for deployment. Also build AI-integrated products using LangChain, ChromaDB, and RAG pipelines. MSc in Software Engineering (Berlin, 2026). Background in Mechanical Engineering — structured, systems-level thinking applied to software. Trilingual: Portuguese (native), English (fluent), German (B2). Available for Full-Stack or Backend Developer roles in Berlin or remote.}
 
 
 % -----------------------------------------------------------------------
 \section{Skills}
 % -----------------------------------------------------------------------
-\cvitem{Languages}{Python, SQL}
-\cvitem{Backend}{FastAPI, REST APIs, SQLAlchemy, Pydantic, Alembic, JWT}
-\cvitem{Database}{PostgreSQL}
-\cvitem{DevOps}{Docker, GitHub Actions, CI/CD, Render, Vercel}
-\cvitem{Testing}{Pytest, Postman, API Testing}
-\cvitem{Data / ML}{Pandas, NumPy, Scikit-learn, PyTorch, YOLOv8, Computer Vision, Machine Learning, Streamlit}
-\cvitem{Tools}{Git, Google Colab, Matplotlib}
-\cvitem{Concepts}{Multithreading, Parallel Programming, Algorithm Design}
+\cvitem{Languages}{Python, TypeScript, SQL}
+\cvitem{Backend}{FastAPI, Next.js 16, REST APIs, SQLAlchemy, Drizzle ORM, Pydantic, Alembic, JWT}
+\cvitem{Database}{PostgreSQL, Supabase}
+\cvitem{SaaS \& Integrations}{Stripe (subscriptions, webhooks, PIX), Resend, Upstash Redis, WhatsApp via Evolution API v2}
+\cvitem{DevOps \& Deploy}{Docker, GitHub Actions, CI/CD, Railway, Vercel, Git}
+\cvitem{Testing}{Pytest, Postman}
+\cvitem{AI / ML}{LangChain, ChromaDB, RAG, Vector Search, YOLOv8, Scikit-learn, Pandas, PyTorch}
+\cvitem{AI Tools}{Claude Code, GitHub Copilot}
 
 
 % -----------------------------------------------------------------------
 \section{Projects}
 % -----------------------------------------------------------------------
 
-\cventry{2026--present}{Inspection Management API}{FastAPI · PostgreSQL · Docker · Pytest · GitHub Actions}{Berlin}{}{
+\cventry{2026--present}{Odys — Scheduling SaaS for Freelance Professionals}{Next.js 16 · TypeScript · Supabase · Stripe · Docker · Railway}{Berlin}{}{
+WhatsApp-first SaaS platform where clients book online and receive automatic WhatsApp reminders; professionals manage availability, payments, and appointments from a dashboard. Live at \href{https://odys.com.br}{odys.com.br}.
+\begin{itemize}
+  \item Multi-tenant architecture: each professional gets a public booking page at \texttt{/p/[slug]} with fully isolated data and configurable availability
+  \item Stripe subscriptions + PIX with webhook handling; Supabase Auth; Drizzle ORM on PostgreSQL; resolved PgBouncer transaction mode compatibility
+  \item WhatsApp-native reminders via self-hosted Evolution API v2 on Railway, triggered by Supabase \texttt{pg\_cron} — not a third-party bot
+  \item Rate limiting with Upstash Redis; error monitoring with Sentry; transactional email via Resend; CI/CD via GitHub Actions
+\end{itemize}}
+
+\cventry{2026}{RAG PDF Chatbot}{FastAPI · LangChain · ChromaDB · Groq · Docker}{Berlin}{}{
+Production-ready RAG application for contextual document Q\&A with source attribution. Deployed on Render.
+\begin{itemize}
+  \item Section-aware chunking via font-size analysis — detects headings to keep related content together
+  \item Conversation history support; every answer includes source attribution (section name and page number)
+  \item \href{https://rag-pdf-chatbot-0w9z.onrender.com}{Live Demo} $|$ \href{https://github.com/tiagorcfortunato/rag-pdf-chatbot}{GitHub}
+\end{itemize}}
+
+\cventry{2026}{Inspection Management API}{FastAPI · PostgreSQL · Docker · Pytest · GitHub Actions}{Berlin}{}{
 Production REST API for managing infrastructure inspections — damage reporting, severity classification, and repair status tracking.
 \begin{itemize}
-  \item Modular architecture with JWT authentication, per-user data isolation, and status lifecycle: reported $\rightarrow$ verified $\rightarrow$ scheduled $\rightarrow$ repaired
-  \item Advanced filtering, pagination, and sorting on all endpoints; companion frontend dashboard deployed on Vercel
-  \item 31 automated tests (Pytest); CI/CD via GitHub Actions; containerized with Docker; deployed on Render
+  \item JWT authentication, per-user data isolation, and status lifecycle: reported $\rightarrow$ verified $\rightarrow$ scheduled $\rightarrow$ repaired
+  \item 31 automated tests (Pytest); CI/CD via GitHub Actions; containerized with Docker; deployed on Render with live frontend dashboard
   \item \href{https://inspection-management-api.onrender.com/docs}{Live API Docs} $|$ \href{https://github.com/tiagorcfortunato/inspection-management-api}{GitHub}
 \end{itemize}}
 
-\cventry{2026}{Road Hazard Detection \& Prioritization — MSc Thesis}{YOLOv8 · PyTorch · Python · RDD2022}{Berlin}{}{
-Two-stage hybrid pipeline combining deep learning object detection with a rule-based expert system to detect road surface damage and automatically prioritize maintenance actions.
+\cventry{2025--2026}{Road Hazard Detection \& Prioritization — MSc Thesis}{YOLOv8 · PyTorch · Python · RDD2022}{Berlin}{}{
+Two-stage hybrid pipeline combining deep learning object detection with a rule-based expert system for automated road maintenance prioritization.
 \begin{itemize}
-  \item Conducted 4 controlled experiments (EXP1--EXP4) varying model capacity, resolution, and training length; best config (YOLOv8s): \textbf{mAP50 0.663, Precision 0.694, Recall 0.604}
-  \item Built a rule-based expert system with geometric filtering, continuous severity scoring, and quantile-based prioritization (LOW / MEDIUM / HIGH)
-  \item Post-processing reduced noisy detections by \textbf{31.2\%} (8{,}304 $\rightarrow$ 5{,}711) while preserving structurally relevant defects
-  \item Designed for interpretability: every prioritization decision traceable to explicit rules — no black boxes
+  \item Best config (YOLOv8s): \textbf{mAP50 0.663, Precision 0.694, Recall 0.604} across 4 controlled experiments
+  \item Post-processing reduced noisy detections by \textbf{31.2\%} (8{,}304 $\rightarrow$ 5{,}711); every prioritization decision traceable to explicit rules
 \end{itemize}}
-
-\cventry{2025}{Vehicle Health Monitor \& Fault Predictor}{Python · Pandas · Scikit-learn · Streamlit}{Berlin}{}{
-End-to-end ML pipeline analyzing vehicle sensor data (temperature, vibration, oil pressure, RPM) to predict failures before they occur.
-\begin{itemize}
-  \item Multi-stage pipeline: data generation $\rightarrow$ ETL $\rightarrow$ EDA $\rightarrow$ ML $\rightarrow$ live dashboard
-  \item Random Forest classifier with imbalanced data handling, achieving \textbf{99.9\% accuracy}
-  \item \href{https://github.com/tiagorcfortunato/Capstone_VehicleHealth}{GitHub}
-\end{itemize}}
-
-\cventry{2025}{Matrix Recommendation System with Multithreading}{Python · NumPy · Threading · Matplotlib}{Berlin}{}{
-Implemented S = U $\times$ P matrix scoring with normalization; benchmarked sequential vs.\ multithreaded execution, demonstrating threading tradeoffs at scale. \href{https://github.com/tiagorcfortunato/matrix-recommendation-multithread}{GitHub}}
 
 
 % -----------------------------------------------------------------------
 \section{Experience}
 % -----------------------------------------------------------------------
 
-\cventry{2024--2025}{Event Staff}{FARO Gruppe}{Berlin, Germany}{}{
+\cventry{2026--present}{Founder \& Full-Stack Developer}{Odys}{Berlin, Germany}{}{
 \begin{itemize}
-  \item Coordinated operations in high-paced event environments with strong attention to detail and reliability under pressure
+  \item Sole developer of a live SaaS product — designed and shipped the full system from architecture to production deployment
 \end{itemize}}
 
-\cventry{2019--2024}{Project Manager}{Fortunato Joias — Family Jewelry \& Manufacturing}{Brazil}{}{
+\cventry{2019--2024}{Project Manager}{Fortunato Joias — Jewelry \& Manufacturing}{Brazil}{}{
 \begin{itemize}
-  \item Managed production and operational projects for a family-owned jewelry company with in-house casting and manufacturing, founded in the 1970s
-  \item Coordinated production schedules, supplier relationships, and delivery deadlines across design-to-production cycles
-  \item Improved reporting and documentation systems to increase operational visibility and follow-up consistency
+  \item Owned production planning, supplier relationships, and delivery cycles for a family manufacturing business — five years of end-to-end operational ownership
 \end{itemize}}
 
 \cventry{2018--2019}{Engineering Intern — Logistics \& Operations}{Metalúrgica Besser}{Rio de Janeiro, Brazil}{}{
 \begin{itemize}
   \item Supported logistics routines and production planning; reduced delays through structured problem solving
-  \item Managed shipment priorities according to operational deadlines and constraints
 \end{itemize}}
 
 \cventry{2016--2018}{Co-Founder \& German Teacher}{Guide Idiomas}{Rio de Janeiro, Brazil}{}{
 \begin{itemize}
-  \item Co-founded a German language school; developed structured curricula and tracked student progress
-  \item Managed scheduling, customer communication, and day-to-day operations
+  \item Co-founded a German language school; developed structured curricula and managed scheduling and customer operations
 \end{itemize}}
 
 
@@ -129,7 +126,7 @@ Implemented S = U $\times$ P matrix scoring with normalization; benchmarked sequ
 \cventry{2024--2026}{MSc Software Engineering}{University of Europe for Applied Sciences}{Berlin, Germany}{}{
 \begin{itemize}
   \item Focus: Software Testing, Automation, and applied Machine Learning
-  \item Thesis: \textit{Expert System for Road Surface Hazard Detection} — YOLOv8-based detection pipeline combined with a rule-based prioritization expert system (RDD2022 dataset)
+  \item Thesis: \textit{Expert System for Road Surface Hazard Detection} — YOLOv8-based pipeline with rule-based prioritization (RDD2022)
 \end{itemize}}
 
 \cventry{2022--2023}{Postgraduate — Railway Engineering}{Faculdade UniBF}{Brazil}{}{}
