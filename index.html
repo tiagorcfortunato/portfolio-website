@@ -599,6 +599,7 @@
                     <div class="skill-group-label">Programming</div>
                     <div class="skill-items">
                         <span class="skill-item">Python</span>
+                        <span class="skill-item">TypeScript</span>
                         <span class="skill-item">SQL</span>
                     </div>
                 </div>
@@ -606,20 +607,31 @@
                     <div class="skill-group-label">Backend</div>
                     <div class="skill-items">
                         <span class="skill-item">FastAPI</span>
+                        <span class="skill-item">Next.js 15</span>
                         <span class="skill-item">REST APIs</span>
                         <span class="skill-item">PostgreSQL</span>
-                        <span class="skill-item">Pydantic</span>
+                        <span class="skill-item">Drizzle ORM</span>
+                        <span class="skill-item">SQLAlchemy</span>
                         <span class="skill-item">Alembic</span>
                     </div>
                 </div>
                 <div class="skill-group">
-                    <div class="skill-group-label">DevOps & Tools</div>
+                    <div class="skill-group-label">Infra & DevOps</div>
                     <div class="skill-items">
                         <span class="skill-item">Docker</span>
                         <span class="skill-item">GitHub Actions</span>
                         <span class="skill-item">CI/CD</span>
+                        <span class="skill-item">Railway</span>
                         <span class="skill-item">Git</span>
                         <span class="skill-item">Postman</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <div class="skill-group-label">Cloud & SaaS</div>
+                    <div class="skill-items">
+                        <span class="skill-item">Supabase</span>
+                        <span class="skill-item">Stripe</span>
+                        <span class="skill-item">Resend</span>
                     </div>
                 </div>
                 <div class="skill-group">
@@ -664,6 +676,37 @@
             <p class="section-label">Projects</p>
             <h2 class="section-title">What I've built</h2>
             <div class="projects-grid">
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <span class="project-name">Odys — Scheduling SaaS</span>
+                        <span class="project-year">2026</span>
+                    </div>
+                    <p class="project-desc">WhatsApp-first scheduling SaaS for Brazilian freelance professionals — therapists, personal trainers, salons. Clients book online, receive automatic WhatsApp reminders 24h before, and professionals manage everything from a dashboard. Live product at odys.com.br.</p>
+                    <ul class="project-bullets">
+                        <li>WhatsApp-native reminders via self-hosted Evolution API v2 on Railway — triggered by Supabase pg_cron, not a third-party bot</li>
+                        <li>Multi-tenant architecture: each professional gets a public booking page at /p/[slug] with fully isolated data and configurable availability</li>
+                        <li>Stripe subscriptions + PIX; Supabase Auth; Drizzle ORM on PostgreSQL; resolved PgBouncer transaction mode compatibility</li>
+                        <li>Rate limiting with Upstash Redis; error monitoring with Sentry; transactional email via Resend</li>
+                        <li>Deployed on Vercel (app) + Railway (WhatsApp API Docker container); CI/CD via GitHub Actions</li>
+                    </ul>
+                    <div class="project-tools">
+                        <span class="tag accent">Next.js 16</span>
+                        <span class="tag">TypeScript</span>
+                        <span class="tag">Supabase</span>
+                        <span class="tag">Drizzle ORM</span>
+                        <span class="tag">Stripe</span>
+                        <span class="tag">Evolution API</span>
+                        <span class="tag">Railway</span>
+                        <span class="tag">Vercel</span>
+                        <span class="tag">Upstash Redis</span>
+                        <span class="tag">Docker</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://odys.com.br" target="_blank" class="project-link live">Live Product</a>
+                        <span class="project-link live" style="cursor:default;">Private repo</span>
+                    </div>
+                </div>
 
                 <div class="project-card">
                     <div class="project-header">
@@ -803,12 +846,23 @@
             <div class="timeline">
 
                 <div class="timeline-item">
+                    <div class="timeline-date">2026 — present</div>
+                    <div class="timeline-content">
+                        <div class="timeline-role">Founder & Full-Stack Developer</div>
+                        <div class="timeline-company" style="color: var(--accent);">Odys · odys.com.br</div>
+                        <div class="timeline-desc">
+                            Building Odys — a WhatsApp-first scheduling SaaS for Brazilian freelance professionals. Sole developer: designed and shipped the full product from scratch, including multi-tenant architecture, Stripe billing, self-hosted WhatsApp API on Railway, and automated reminder flows via Supabase pg_cron.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
                     <div class="timeline-date">2025 — present</div>
                     <div class="timeline-content">
                         <div class="timeline-role">Independent Backend Developer</div>
                         <div class="timeline-company" style="color: var(--accent);">Open to Work · Berlin &amp; Remote</div>
                         <div class="timeline-desc">
-                            Building production-grade backend systems independently — shipping real projects with live deployments, automated tests, and CI/CD pipelines. Actively seeking a Backend or Python Developer role in Berlin or remote.
+                            Building production-grade backend systems independently — REST APIs, RAG pipelines, and SaaS products with live deployments, automated tests, and CI/CD pipelines. Actively seeking a Backend or Full-Stack Developer role in Berlin or remote.
                         </div>
                     </div>
                 </div>
