@@ -6,11 +6,11 @@ I am a software engineer focused on building reliable backend systems and practi
 ## Featured Projects
 
 ### Odys (Private Repository)
-A scheduling and communication SaaS platform built with a focus on system integration and reliability.
-- Developed REST APIs using Python (FastAPI).
-- Implemented a multi-tenant backend architecture.
-- Integrated Stripe for payment and subscription logic.
-- Utilized Next.js 15 and Drizzle ORM for modern full-stack features.
+A multi-tenant scheduling and communication SaaS platform designed for high reliability and rapid iterative development.
+- **Development Process:** Architected and implemented using an **Agentic AI Workflow** (Claude), focusing on rapid prototyping, system-level design, and integration of modern full-stack technologies.
+- **Backend:** Built robust REST APIs using Python (FastAPI) and managed complex data models with Drizzle ORM.
+- **Architecture:** Implemented a multi-tenant backend structure and secure Stripe integration for payment and subscription logic.
+- **Frontend:** Leveraged Next.js 15 for a modern, responsive user experience.
 
 ### Inspection Management API
 A backend system for managing infrastructure inspection workflows.
@@ -19,7 +19,7 @@ A backend system for managing infrastructure inspection workflows.
 - Focused on structured API design, JWT authentication, and automated testing (31+ tests).
 
 ### RAG PDF Chatbot
-An intelligent document query system using Retrieval-Augmented Generation.
+An intelligent document query system using Retrieval-Augmented Generation (RAG).
 - Built data pipelines for document ingestion and retrieval.
 - Implemented section-aware chunking based on font-size analysis for high retrieval accuracy.
 - Leveraged LangChain and Claude (Anthropic) for response generation.
