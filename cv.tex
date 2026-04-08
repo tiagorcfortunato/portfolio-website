@@ -26,7 +26,7 @@
 
 % Personal data
 \name{Tiago}{Fortunato}
-\title{\texorpdfstring{Full-Stack Developer \& Founder \\ Python $|$ FastAPI $|$ Next.js $|$ TypeScript}{Full-Stack Developer & Founder | Python | FastAPI | Next.js | TypeScript}}
+\title{\texorpdfstring{Software Engineer $|$ Backend \& AI Applications \\ Python $|$ FastAPI $|$ LangChain $|$ RAG $|$ Next.js}{Software Engineer | Backend & AI Applications | Python | FastAPI | LangChain | RAG | Next.js}}
 \address{Berlin, Germany}
 \phone[mobile]{+49~172~238~9909}
 \email{tifortunato.eng@gmail.com}
@@ -41,7 +41,7 @@
 % -----------------------------------------------------------------------
 \section{Profile}
 % -----------------------------------------------------------------------
-\cvitem{}{Full-Stack Developer and Founder of \textbf{Odys} (\href{https://odys.com.br}{odys.com.br}) — a live WhatsApp-first scheduling SaaS built entirely solo, from architecture to production. MSc Software Engineering, Berlin 2026. Background in Mechanical Engineering. Trilingual: Portuguese (native), English (fluent), German (B2). Available for Full-Stack or Backend Developer roles in Berlin or remote.}
+\cvitem{}{Software Engineer building backend systems and AI-powered applications — RAG pipelines, Vision AI classification, LLM integration with observability. Founder of \textbf{Odys} (\href{https://odys.com.br}{odys.com.br}), a live SaaS product built entirely solo. MSc Software Engineering, Berlin 2026. Background in Mechanical Engineering. Trilingual: Portuguese (native), English (fluent), German (B2). Available for AI Application Engineer, Backend Developer, or Product Engineer roles in Berlin or remote.}
 
 \vspace{-1mm}
 
@@ -51,7 +51,7 @@
 \cvitem{Backend Engineering}{Python, FastAPI, PostgreSQL, SQLAlchemy, Drizzle ORM, Pydantic, Alembic, JWT, Pytest; Production REST APIs with clean architecture, automated testing, and CI/CD. Skilled in schema design, migrations, auth flows, and data modeling.}
 \cvitem{Full-Stack \& SaaS}{TypeScript, Next.js 16, Supabase, Stripe, Resend, Upstash Redis, Evolution API; End-to-end SaaS product development with multi-tenant architecture, subscription billing, transactional email, rate limiting, and third-party integrations. Comfortable owning the full product lifecycle from auth to deployment.}
 \cvitem{DevOps \& Infrastructure}{Docker, GitHub Actions, CI/CD, Railway, Vercel, Git; Containerizing applications, building automated deployment pipelines, and managing cloud infrastructure across multiple platforms.}
-\cvitem{AI \& Machine Learning}{LangChain, ChromaDB, RAG, Vector Search, YOLOv8, Scikit-learn, Pandas, PyTorch, Claude Code; RAG pipelines with contextual chunking and source attribution; computer vision models for object detection; classical ML for predictive tasks.}
+\cvitem{AI \& LLM Applications}{LangChain, ChromaDB, RAG, Groq, Vision AI, LangSmith, RAGAs, fastembed, YOLOv8, Scikit-learn, PyTorch, Claude Code; Production RAG pipelines with retrieval evaluation; Vision AI classification with structured LLM output; LLM observability and tracing; computer vision for object detection.}
 
 \vspace{-1mm}
 
@@ -68,15 +68,16 @@ WhatsApp-first SaaS platform where clients book online and receive automatic Wha
   \item Rate limiting with Upstash Redis; error monitoring with Sentry; transactional email via Resend; CI/CD via GitHub Actions
 \end{itemize}}
 
-\cventry{2026}{RAG PDF Chatbot}{FastAPI · LangChain · ChromaDB · Groq · Docker}{Berlin}{}{
-Section-aware PDF Q\&A with conversation history and source attribution (section + page number). Deployed on Render. \href{https://rag-pdf-chatbot-0w9z.onrender.com}{Live Demo} $|$ \href{https://github.com/tiagorcfortunato/rag-pdf-chatbot}{GitHub}}
+\cventry{2026}{AI Career Assistant — RAG Chatbot}{FastAPI · LangChain · ChromaDB · Groq · RAGAs · Docker}{Berlin}{}{
+AI-powered chatbot where recruiters ask questions about my background — built with a RAG pipeline over a curated knowledge base. Streaming responses via Groq (Llama 3.1), conversation history, suggested follow-ups, and evaluation with RAGAs. \href{https://rag-pdf-chatbot-0w9z.onrender.com}{Live Demo} $|$ \href{https://github.com/tiagorcfortunato/rag-pdf-chatbot}{GitHub}}
 
 \newpage
 
-\cventry{2026}{Inspection Management API}{FastAPI · PostgreSQL · Docker · Pytest · GitHub Actions}{Berlin}{}{
-Production REST API for infrastructure inspection management with JWT auth, per-user isolation, and status lifecycle (reported $\rightarrow$ repaired).
+\cventry{2026}{Inspection Management API — AI-Powered}{FastAPI · Groq Vision AI · LangChain · LangSmith · PostgreSQL · Docker}{Berlin}{}{
+Production REST API with autonomous AI classification: upload a photo and the system classifies severity and damage type via Vision AI, with explainable rationale.
 \begin{itemize}
-  \item 31 Pytest tests; CI/CD via GitHub Actions; Docker; live on Render with frontend dashboard — \href{https://inspection-management-api.onrender.com/docs}{API Docs} $|$ \href{https://github.com/tiagorcfortunato/inspection-management-api}{GitHub}
+  \item Vision AI via Groq SDK; structured LLM output with LangChain; LangSmith for observability; XAI rationale field for transparency
+  \item JWT auth with admin role; 31 Pytest tests; CI/CD via GitHub Actions; frontend dashboard with image upload and AI status badges — \href{https://inspection-management-api.onrender.com/docs}{API Docs} $|$ \href{https://github.com/tiagorcfortunato/inspection-management-api}{GitHub}
 \end{itemize}}
 
 \cventry{2025--2026}{Road Hazard Detection \& Prioritization — MSc Thesis}{YOLOv8 · PyTorch · Python · RDD2022}{Berlin}{}{
