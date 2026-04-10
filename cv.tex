@@ -1,4 +1,4 @@
-%% Tiago Fortunato — CV
+%% Tiago Fortunato CV
 %% Updated 2026
 
 \documentclass[11pt,a4paper,sans]{moderncv}
@@ -6,8 +6,9 @@
 \moderncvstyle{banking}
 \moderncvcolor{blue}
 
-\usepackage[scale=0.82]{geometry}
+\usepackage[scale=0.84]{geometry}
 \setlength{\footskip}{136.00005pt}
+\linespread{1.06}
 
 \ifxetexorluatex
   \usepackage{fontspec}
@@ -26,64 +27,67 @@
 
 % Personal data
 \name{Tiago}{Fortunato}
-\title{\texorpdfstring{Software Engineer $|$ Backend \& AI Applications \\ {\small Python $|$ FastAPI $|$ LangChain $|$ RAG $|$ Built SaaS (Odys)}}{Software Engineer | Backend & AI Applications | Python | FastAPI | LangChain | RAG | Built SaaS (Odys)}}
+\title{\texorpdfstring{Product Engineer $|$ AI Applications $|$ SaaS \\ {\small Founder of Odys · MSc Software Engineering · LLMs · RAG · Vision AI}}{Product Engineer | AI Applications | SaaS | Founder of Odys | MSc Software Engineering | LLMs | RAG | Vision AI}}
 \address{Berlin, Germany}
 \phone[mobile]{+49~172~238~9909}
 \email{tifortunato.eng@gmail.com}
 \social[linkedin]{tiagorcfortunato}
 \social[github]{tiagorcfortunato}
-\homepage{tiagorcfortunato.vercel.app}
+\homepage{tifortunato.com}
 
 \begin{document}
 \makecvtitle
-\vspace{-6mm}
+\vspace{-3mm}
 
 % -----------------------------------------------------------------------
 \section{Profile}
 % -----------------------------------------------------------------------
-\cvitem{}{Software Engineer building backend systems and AI-powered applications — RAG pipelines, Vision AI classification, LLM integration with observability. Founder of \textbf{Odys} (\href{https://odys.com.br}{odys.com.br}), a live SaaS product built entirely solo. MSc Software Engineering, Berlin 2026. Background in Mechanical Engineering. Trilingual: Portuguese (native), English (fluent), German (B2). Available for AI Application Engineer, Backend Developer, or Product Engineer roles in Berlin or remote.}
-
-\vspace{-1mm}
+\cvitem{}{\textbf{Product Engineer} in Berlin shipping \textbf{AI-powered products} end-to-end with \textbf{LLMs} and \textbf{RAG}. Founder of \textbf{Odys} (\href{https://odys.com.br}{odys.com.br}), a live \textbf{multi-tenant SaaS} built solo on Next.js, Stripe, and self-hosted WhatsApp. Built a production \textbf{RAG career chatbot} (\href{https://chatbot.tifortunato.com}{chatbot.tifortunato.com}) and a \textbf{Vision AI} REST API. \textbf{MSc Software Engineering} (Berlin 2026). Daily user of \textbf{Claude Code} and agentic AI workflows; my edge is shipping fast and owning outcomes from idea to production. \textbf{Trilingual}: Portuguese (native), English (fluent), German (B2.2). Open to Product Engineer, AI Engineer, Solutions Engineer, or Founding Engineer roles.}
 
 % -----------------------------------------------------------------------
 \section{Skills}
 % -----------------------------------------------------------------------
-\cvitem{Backend Engineering}{Python, FastAPI, PostgreSQL, SQLAlchemy, Drizzle ORM, Pydantic, Alembic, JWT, Pytest; Production REST APIs with clean architecture, automated testing, and CI/CD. Skilled in schema design, migrations, auth flows, and data modeling.}
-\cvitem{Full-Stack \& SaaS}{TypeScript, Next.js 16, Supabase, Stripe, Resend, Upstash Redis, Evolution API; End-to-end SaaS product development with multi-tenant architecture, subscription billing, transactional email, rate limiting, and third-party integrations. Comfortable owning the full product lifecycle from auth to deployment.}
-\cvitem{DevOps \& Infrastructure}{Docker, GitHub Actions, CI/CD, Railway, Vercel, Git; Containerizing applications, building automated deployment pipelines, and managing cloud infrastructure across multiple platforms.}
-\cvitem{AI \& LLM Applications}{LangChain, ChromaDB, RAG, Groq, Vision AI, LangSmith, RAGAs, fastembed, YOLOv8, Scikit-learn, PyTorch, Claude Code; Production RAG pipelines with retrieval evaluation; Vision AI classification with structured LLM output; LLM observability and tracing; computer vision for object detection.}
-
-\vspace{-1mm}
+\cvitem{AI-Augmented Development}{\textbf{Claude Code}, Cursor, agentic coding workflows, prompt engineering. Daily user shipping production code with AI as a force multiplier.}
+\cvitem{AI \& LLM Applications}{LLMs, RAG pipelines, embeddings, vector databases, LangChain, ChromaDB, Groq, Llama, Vision AI, LangSmith, RAGAs, fastembed, YOLOv8, PyTorch; hybrid retrieval (semantic + BM25), structured LLM output, evaluation, observability, streaming SSE.}
+\cvitem{Backend \& APIs}{Python, FastAPI, REST APIs, PostgreSQL, SQL, SQLAlchemy, Drizzle ORM, Pydantic, Alembic, JWT auth, Pytest; clean architecture, schema design, and automated testing.}
+\cvitem{Full-Stack \& SaaS}{TypeScript, JavaScript, React, Next.js, Tailwind, Supabase, Stripe, Resend, Upstash Redis; multi-tenant SaaS, subscription billing, transactional email, rate limiting, third-party integrations.}
+\cvitem{DevOps \& Cloud}{Docker, GitHub Actions, CI/CD, AWS EC2, Nginx, Linux, Let's Encrypt, Railway, Vercel, Git; production deployments, containerization, and HTTPS-secured cloud infrastructure.}
 
 % -----------------------------------------------------------------------
-\section{Projects}
+\section{Selected Projects}
 % -----------------------------------------------------------------------
 
-\cventry{2026--present}{Odys — Scheduling SaaS for Freelance Professionals}{Next.js 16 · TypeScript · Supabase · Stripe · Docker · Railway}{Berlin}{}{
+\cventry{2026--present}{Odys: Scheduling SaaS for Freelance Professionals}{Next.js 16 · TypeScript · Supabase · Stripe · Docker · Railway}{Berlin}{}{
 WhatsApp-first SaaS platform where clients book online and receive automatic WhatsApp reminders; professionals manage availability, payments, and appointments from a dashboard. Live at \href{https://odys.com.br}{odys.com.br}.
 \begin{itemize}
   \item Multi-tenant architecture: each professional gets a public booking page at \texttt{/p/[slug]} with fully isolated data and configurable availability
   \item Stripe subscriptions + PIX with webhook handling; Supabase Auth; Drizzle ORM on PostgreSQL; resolved PgBouncer transaction mode compatibility
-  \item WhatsApp-native reminders via self-hosted Evolution API v2 on Railway, triggered by Supabase \texttt{pg\_cron} — not a third-party bot
+  \item WhatsApp-native reminders via self-hosted Evolution API v2 on Railway, triggered by Supabase \texttt{pg\_cron} (not a third-party bot)
   \item Rate limiting with Upstash Redis; error monitoring with Sentry; transactional email via Resend; CI/CD via GitHub Actions
 \end{itemize}}
 
-\cventry{2026}{AI Career Assistant — RAG Chatbot}{FastAPI · LangChain · ChromaDB · Groq · RAGAs · Docker}{Berlin}{}{
-AI-powered chatbot where recruiters ask questions about my background — built with a RAG pipeline over a curated knowledge base. Streaming responses via Groq (Llama 3.1), conversation history, suggested follow-ups, and evaluation with RAGAs. \href{https://rag-pdf-chatbot-0w9z.onrender.com}{Live Demo} $|$ \href{https://github.com/tiagorcfortunato/rag-pdf-chatbot}{GitHub}}
-
 \newpage
 
-\cventry{2026}{Inspection Management API — AI-Powered}{FastAPI · Groq Vision AI · LangChain · LangSmith · PostgreSQL · Docker}{Berlin}{}{
-Production REST API with autonomous AI classification: upload a photo and the system classifies severity and damage type via Vision AI, with explainable rationale.
+\cventry{2026}{AI Career Assistant: RAG Chatbot}{FastAPI · LangChain · ChromaDB · Groq · RAGAs · Docker · AWS EC2}{Berlin}{}{
+Production RAG chatbot where recruiters ask questions about my background and get answers grounded in a curated knowledge base.
 \begin{itemize}
-  \item Vision AI via Groq SDK; structured LLM output with LangChain; LangSmith for observability; XAI rationale field for transparency
-  \item JWT auth with admin role; 31 Pytest tests; CI/CD via GitHub Actions; frontend dashboard with image upload and AI status badges — \href{https://inspection-management-api.onrender.com/docs}{API Docs} $|$ \href{https://github.com/tiagorcfortunato/inspection-management-api}{GitHub}
+  \item Hybrid retrieval: semantic search + BM25 fused with Reciprocal Rank Fusion; custom section-aware chunking
+  \item Streaming SSE responses via Groq (Llama 3.1); RAGAs evaluation pipeline for retrieval quality
+  \item Self-hosted on AWS EC2 with Docker, Nginx, and Let's Encrypt HTTPS. \href{https://chatbot.tifortunato.com}{chatbot.tifortunato.com} $|$ \href{https://github.com/tiagorcfortunato/rag-pdf-chatbot}{GitHub}
 \end{itemize}}
 
-\cventry{2025--2026}{Road Hazard Detection \& Prioritization — MSc Thesis}{YOLOv8 · PyTorch · Python · RDD2022}{Berlin}{}{
-Deep learning detection pipeline combined with a rule-based expert system for automated road maintenance prioritization.
+\cventry{2026}{Inspection Management API}{FastAPI · Groq Vision AI · LangChain · LangSmith · PostgreSQL · Docker}{Berlin}{}{
+Production REST API that classifies inspection photos with Vision AI: upload an image and the system returns severity and damage type with explainable rationale.
 \begin{itemize}
-  \item Best config (YOLOv8s): \textbf{mAP50 0.663, Precision 0.694, Recall 0.604}; post-processing reduced noisy detections by \textbf{31.2\%} — every decision traceable to explicit rules
+  \item Vision AI via Groq SDK; structured LLM output with LangChain; LangSmith for observability; XAI rationale field for transparency
+  \item JWT auth with admin role; comprehensive Pytest suite covering all endpoints; CI/CD via GitHub Actions; frontend dashboard with image upload and AI status badges. \href{https://inspection-management-api.onrender.com/docs}{API Docs} $|$ \href{https://github.com/tiagorcfortunato/inspection-management-api}{GitHub}
+\end{itemize}}
+
+\cventry{2025--2026}{Road Hazard Detection \& Prioritization: MSc Thesis}{YOLOv8 · PyTorch · Python · RDD2022}{Berlin}{}{
+Deep learning detection pipeline combined with a rule-based expert system for automated road maintenance prioritization on the RDD2022 dataset.
+\begin{itemize}
+  \item Best config (YOLOv8s): \textbf{mAP50 0.663, Precision 0.694, Recall 0.604}
+  \item Rule-based post-processing reduced noisy detections by \textbf{31.2\%}; every prioritization decision traceable to explicit, auditable rules
 \end{itemize}}
 
 % -----------------------------------------------------------------------
@@ -92,39 +96,28 @@ Deep learning detection pipeline combined with a rule-based expert system for au
 
 \cventry{2026--present}{Founder \& Full-Stack Developer}{Odys · \href{https://odys.com.br}{odys.com.br}}{Berlin, Germany}{}{
 \begin{itemize}
-  \item Identified a real market gap — Brazilian freelance professionals losing time and money managing bookings manually via WhatsApp — and built a product to solve it
-  \item Owned the full product lifecycle: market research, product design, technical architecture, implementation, and production deployment
-  \item Built and launched an MVP as sole developer within weeks; product is live and onboarding first users
+  \item Identified a market gap: Brazilian freelance professionals losing time and money managing bookings manually via WhatsApp
+  \item Owned the full product lifecycle as sole developer: market research, product design, technical architecture, implementation, and production deployment
+  \item Product live and in active validation with industry professionals to refine product-market fit before scaling marketing
 \end{itemize}}
 
-\cventry{2019--2024}{Project Manager}{Fortunato Joias — Jewelry \& Manufacturing}{Brazil}{}{
-\begin{itemize}
-  \item Owned production planning, supplier relationships, and delivery cycles — five years of end-to-end operational ownership
-\end{itemize}}
+\cventry{2019--2024}{Operations Manager}{Fortunato Joias, Family-Owned Jewelry Manufacturer}{Brazil}{}{Ran day-to-day operations of the family business: production planning, supplier relationships, and delivery cycles. Five years of end-to-end ownership before transitioning into software engineering full-time.}
 
-\cventry{2018--2019}{Engineering Intern — Logistics \& Operations}{Metalúrgica Besser}{Rio de Janeiro, Brazil}{}{
-\begin{itemize}
-  \item Supported logistics routines and production planning; reduced delays through structured problem solving
-\end{itemize}}
-
-\cventry{2016--2018}{Co-Founder \& German Teacher}{Guide Idiomas}{Rio de Janeiro, Brazil}{}{
-\begin{itemize}
-  \item Co-founded a German language school; developed structured curricula and managed scheduling and operations
-\end{itemize}}
+\cventry{2018--2019}{Engineering Intern, Logistics \& Operations}{Metalúrgica Besser}{Rio de Janeiro, Brazil}{}{Supported logistics routines and production planning; reduced delays through structured problem solving.}
 
 % -----------------------------------------------------------------------
 \section{Education}
 % -----------------------------------------------------------------------
 
-\cventry{2024--2026}{MSc Software Engineering}{University of Europe for Applied Sciences}{Berlin, Germany}{}{Thesis: \textit{Expert System for Road Surface Hazard Detection} — YOLOv8 pipeline with rule-based prioritization (RDD2022)}
+\cventry{2024--2026}{MSc Software Engineering}{University of Europe for Applied Sciences}{Berlin, Germany}{}{}
 
-\cventry{2014--2016}{Exchange Student — Mechanical Engineering}{Hochschule Wismar}{Germany}{}{}
+\cventry{2014--2016}{Exchange Student, Mechanical Engineering}{Hochschule Wismar}{Germany}{}{}
 
 \cventry{2013--2018}{BSc Mechanical Engineering}{UERJ}{Rio de Janeiro, Brazil}{}{}
 
 % -----------------------------------------------------------------------
 \section{Languages}
 % -----------------------------------------------------------------------
-\cvitem{}{Portuguese (Native) · English (Fluent) · German (B2.2, improving)}
+\cvitem{}{Portuguese (Native) · English (Fluent) · German (B2.2)}
 
 \end{document}
