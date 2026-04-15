@@ -42,13 +42,13 @@
 % -----------------------------------------------------------------------
 \section{Profile}
 % -----------------------------------------------------------------------
-\cvitem{}{\textbf{AI Application Engineer} and \textbf{Product Engineer} in Berlin shipping \textbf{AI-powered products} end-to-end with \textbf{LLMs} and \textbf{RAG}. Founder of \textbf{Odys} (\href{https://odys.com.br}{odys.com.br}), a live \textbf{multi-tenant SaaS} built solo on Next.js, Stripe, and self-hosted WhatsApp. Built a production \textbf{RAG career chatbot} (\href{https://chatbot.tifortunato.com}{chatbot.tifortunato.com}) and a \textbf{Vision AI} REST API. \textbf{MSc Software Engineering} (Berlin 2026). Daily user of \textbf{Claude Code} and agentic AI workflows; my edge is shipping fast and owning outcomes from idea to production. \textbf{Trilingual}: Portuguese (native), English (fluent), German (B2.2). Open to \textbf{AI Application Engineer}, \textbf{Product Engineer}, AI Engineer, Solutions Engineer, or Founding Engineer roles.}
+\cvitem{}{\textbf{AI Application Engineer} and \textbf{Product Engineer} in Berlin, shipping AI-powered products end-to-end. Shipped \textbf{Odys} (\href{https://odys.com.br}{odys.com.br}) solo from zero to production: Portuguese LLM intake layer, self-hosted WhatsApp integration, Stripe/PIX billing, hardened and monitored. Also built a production RAG career chatbot (\href{https://chatbot.tifortunato.com}{chatbot.tifortunato.com}) and a Vision AI REST API. \textbf{MSc Software Engineering} (Berlin 2026). Daily user of \textbf{Claude Code} and agentic AI workflows. Trilingual: Portuguese (native), English (fluent), German (C1).}
 
 % -----------------------------------------------------------------------
 \section{Skills}
 % -----------------------------------------------------------------------
 \cvitem{AI-Augmented Development}{\textbf{Claude Code}, Cursor, agentic coding workflows, prompt engineering. Daily user shipping production code with AI as a force multiplier.}
-\cvitem{AI \& LLM Applications}{LLMs, RAG pipelines, embeddings, vector databases, LangChain, ChromaDB, Groq, Llama, Vision AI, LangSmith, RAGAs, fastembed, YOLOv8, PyTorch; hybrid retrieval (semantic + BM25), structured LLM output, evaluation, observability, streaming SSE.}
+\cvitem{AI \& LLM Applications}{LLMs, RAG pipelines, embeddings, vector databases, LangChain, ChromaDB, Groq, Llama, Vision AI, LangSmith, RAGAs; hybrid retrieval (semantic + BM25), structured LLM output, prompt engineering, evaluation, observability, streaming SSE.}
 \cvitem{Backend \& APIs}{Python, FastAPI, REST APIs, PostgreSQL, SQL, SQLAlchemy, Drizzle ORM, Pydantic, Alembic, JWT auth, Pytest; clean architecture, schema design, and automated testing.}
 \cvitem{Full-Stack \& SaaS}{TypeScript, JavaScript, React, Next.js, Tailwind, Supabase, Stripe, Resend, Upstash Redis; multi-tenant SaaS, subscription billing, transactional email, rate limiting, third-party integrations.}
 \cvitem{DevOps \& Cloud}{Docker, GitHub Actions, CI/CD, AWS EC2, Nginx, Linux, Let's Encrypt, Railway, Vercel, Git; production deployments, containerization, and HTTPS-secured cloud infrastructure.}
@@ -57,13 +57,13 @@
 \section{Selected Projects}
 % -----------------------------------------------------------------------
 
-\cventry{2026--present}{Odys: Scheduling SaaS for Freelance Professionals}{Next.js 16 · TypeScript · Supabase · Stripe · Docker · Railway}{Berlin}{}{
-WhatsApp-first SaaS platform where clients book online and receive automatic WhatsApp reminders; professionals manage availability, payments, and appointments from a dashboard. Live at \href{https://odys.com.br}{odys.com.br}.
+\cventry{2026--present}{Odys: Scheduling SaaS for Freelance Professionals}{Next.js 16 · TypeScript · Supabase · Stripe · Groq · Docker · Railway}{Berlin}{}{
+WhatsApp-first SaaS platform with an AI intake layer: clients book via natural language or web UI; professionals manage availability, payments, and appointments from a dashboard. Live at \href{https://odys.com.br}{odys.com.br}.
 \begin{itemize}
-  \item Multi-tenant architecture: each professional gets a public booking page at \texttt{/p/[slug]} with fully isolated data and configurable availability
-  \item Stripe subscriptions + PIX with webhook handling; Supabase Auth; Drizzle ORM on PostgreSQL; resolved PgBouncer transaction mode compatibility
-  \item WhatsApp-native reminders via self-hosted Evolution API v2 on Railway, triggered by Supabase \texttt{pg\_cron} (not a third-party bot)
-  \item Rate limiting with Upstash Redis; error monitoring with Sentry; transactional email via Resend; CI/CD via GitHub Actions
+  \item \textbf{AI intake (Groq LLM):} parses Portuguese natural-language WhatsApp messages, extracts intent via structured output (Zod-validated JSON), proposes slots, and books on confirmation; prompt design, tool-calling, retry logic, and deterministic fallback built from scratch
+  \item \textbf{Multi-tenant SaaS:} public booking page per professional (\texttt{/p/[slug]}) with isolated data; plan-gated features (free/basic/pro/premium) with trial flow; Stripe subscriptions + Brazilian PIX with idempotent webhook handling; Supabase Auth with email verification; Drizzle ORM on PostgreSQL
+  \item \textbf{WhatsApp-native automation:} reminders and confirmations via self-hosted Evolution API v2 on Railway, orchestrated by Supabase \texttt{pg\_cron}; no third-party bot, no per-message fees; signature-verified inbound webhooks
+  \item \textbf{Production maturity:} rate limiting (Upstash Redis sliding window), transactional email via Resend SMTP, error monitoring (Sentry), product analytics (PostHog), end-to-end type safety (TypeScript + Zod), CI/CD (GitHub Actions)
 \end{itemize}}
 
 \newpage
@@ -96,14 +96,12 @@ Deep learning detection pipeline combined with a rule-based expert system for au
 
 \cventry{2026--present}{Founder \& Full-Stack Developer}{Odys · \href{https://odys.com.br}{odys.com.br}}{Berlin, Germany}{}{
 \begin{itemize}
-  \item Identified a market gap: Brazilian freelance professionals losing time and money managing bookings manually via WhatsApp
-  \item Owned the full product lifecycle as sole developer: market research, product design, technical architecture, implementation, and production deployment
-  \item Product live and in active validation with industry professionals to refine product-market fit before scaling marketing
+  \item Identified a market gap through direct conversations with independent professionals losing bookings to manual WhatsApp workflows
+  \item Owned the full product lifecycle as sole developer: user research, product design, technical architecture, implementation, hardening, and production deployment
+  \item Shipped MVP and iterated based on interviews with 8+ independent professionals; refined product scope 2x before production launch to focus the intake flow on the real bottleneck
 \end{itemize}}
 
-\cventry{2019--2024}{Operations Manager}{Fortunato Joias, Family-Owned Jewelry Manufacturer}{Brazil}{}{Ran day-to-day operations of the family business: production planning, supplier relationships, and delivery cycles. Five years of end-to-end ownership before transitioning into software engineering full-time.}
-
-\cventry{2018--2019}{Engineering Intern, Logistics \& Operations}{Metalúrgica Besser}{Rio de Janeiro, Brazil}{}{Supported logistics routines and production planning; reduced delays through structured problem solving.}
+\cventry{2019--2024}{Operations Manager}{Fortunato Joias, Family-Owned Jewelry Manufacturer}{Brazil}{}{Owned operations of a small manufacturing company: stakeholder alignment, vendor negotiations, production planning, and end-to-end delivery cycles. Five years of running outcomes before learning to code professionally; the ownership muscle transferred directly to founding a SaaS.}
 
 % -----------------------------------------------------------------------
 \section{Education}
@@ -118,6 +116,6 @@ Deep learning detection pipeline combined with a rule-based expert system for au
 % -----------------------------------------------------------------------
 \section{Languages}
 % -----------------------------------------------------------------------
-\cvitem{}{Portuguese (Native) · English (Fluent) · German (B2.2)}
+\cvitem{}{Portuguese (Native) · English (Fluent) · German (C1)}
 
 \end{document}
