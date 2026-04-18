@@ -48,7 +48,7 @@
 \section{Skills}
 % -----------------------------------------------------------------------
 \cvitem{AI-Augmented Development}{\textbf{Claude Code}, Cursor, agentic coding workflows, prompt engineering. Daily user shipping production code with AI as a force multiplier.}
-\cvitem{AI \& LLM Applications}{LLMs, RAG pipelines, embeddings, vector databases, LangChain, ChromaDB, Groq, Llama, Vision AI, LangSmith, RAGAs; hybrid retrieval (semantic + BM25), structured LLM output, prompt engineering, evaluation, observability, streaming SSE.}
+\cvitem{AI \& LLM Applications}{LLMs, RAG pipelines, embeddings, vector databases, LangChain, \textbf{LangGraph}, ChromaDB, Groq, Llama, Vision AI, LangSmith, RAGAs; hybrid retrieval (semantic + BM25), structured LLM output, prompt engineering, evaluation, observability, streaming SSE.}
 \cvitem{Backend \& APIs}{Python, FastAPI, REST APIs, PostgreSQL, SQL, SQLAlchemy, Drizzle ORM, Pydantic, Alembic, JWT auth, Pytest; clean architecture, schema design, and automated testing.}
 \cvitem{Full-Stack \& SaaS}{TypeScript, JavaScript, React, Next.js, Tailwind, Supabase, Stripe, Resend, Upstash Redis; multi-tenant SaaS, subscription billing, transactional email, rate limiting, third-party integrations.}
 \cvitem{DevOps \& Cloud}{Docker, GitHub Actions, CI/CD, AWS EC2, Nginx, Linux, Let's Encrypt, Railway, Vercel, Git; production deployments, containerization, and HTTPS-secured cloud infrastructure.}
@@ -60,20 +60,20 @@
 \cventry{2026--present}{Odys: Scheduling SaaS for Freelance Professionals}{Next.js 16 · TypeScript · Supabase · Stripe · Groq · Docker · Railway}{Berlin}{}{
 WhatsApp-first SaaS platform with an AI intake layer: clients book via natural language or web UI; professionals manage availability, payments, and appointments from a dashboard. Live at \href{https://odys.com.br}{odys.com.br}.
 \begin{itemize}
-  \item \textbf{AI intake (Groq LLM):} parses Portuguese natural-language WhatsApp messages, extracts intent via structured output (Zod-validated JSON), proposes slots, and books on confirmation; prompt design, tool-calling, retry logic, and deterministic fallback built from scratch
-  \item \textbf{Multi-tenant SaaS:} public booking page per professional (\texttt{/p/[slug]}) with isolated data; plan-gated features (free/basic/pro/premium) with trial flow; Stripe subscriptions + Brazilian PIX with idempotent webhook handling; Supabase Auth with email verification; Drizzle ORM on PostgreSQL
-  \item \textbf{WhatsApp-native automation:} reminders and confirmations via self-hosted Evolution API v2 on Railway, orchestrated by Supabase \texttt{pg\_cron}; no third-party bot, no per-message fees; signature-verified inbound webhooks
-  \item \textbf{Production maturity:} rate limiting (Upstash Redis sliding window), transactional email via Resend SMTP, error monitoring (Sentry), product analytics (PostHog), end-to-end type safety (TypeScript + Zod), CI/CD (GitHub Actions)
+  \item \textbf{AI intake (Groq LLM):} parses Portuguese WhatsApp messages, extracts intent as Zod-validated JSON, proposes slots and books; prompt design, tool-calling, retry logic and deterministic fallback built from scratch
+  \item \textbf{Multi-tenant SaaS:} booking page per professional (\texttt{/p/[slug]}); plan-gated features (free/basic/pro/premium) with trial flow; Stripe + PIX with idempotent webhook handling; Supabase Auth with email verification; Drizzle ORM on PostgreSQL
+  \item \textbf{WhatsApp-native automation:} reminders and confirmations via self-hosted Evolution API v2 on Railway, orchestrated by Supabase \texttt{pg\_cron}; signature-verified webhooks
+  \item \textbf{Production maturity:} rate limiting (Upstash Redis), Resend SMTP, Sentry, PostHog, type safety (TypeScript + Zod), CI/CD (GitHub Actions)
 \end{itemize}}
 
 \newpage
 
-\cventry{2026}{AI Career Assistant: RAG Chatbot}{FastAPI · LangChain · ChromaDB · Groq · RAGAs · Docker · AWS EC2}{Berlin}{}{
-Production RAG chatbot where recruiters ask questions about my background and get answers grounded in a curated knowledge base.
+\cventry{2026}{AI Career Assistant: RAG Chatbot}{FastAPI · LangGraph · ChromaDB · Groq · RAGAs · Docker · AWS EC2}{Berlin}{}{
+Production RAG chatbot, migrated from LangChain to \textbf{LangGraph} with 7 async nodes, conditional routing, and typed state management.
 \begin{itemize}
-  \item Hybrid retrieval: semantic search + BM25 fused with Reciprocal Rank Fusion; custom section-aware chunking
-  \item Streaming SSE responses via Groq (Llama 3.1); RAGAs evaluation pipeline for retrieval quality
-  \item Self-hosted on AWS EC2 with Docker, Nginx, and Let's Encrypt HTTPS. \href{https://chatbot.tifortunato.com}{chatbot.tifortunato.com} $|$ \href{https://github.com/tiagorcfortunato/ai-career-assistant}{GitHub}
+  \item LangGraph StateGraph with conditional edges: enrich query, route by project, hybrid retrieve, format context, generate answer, follow-ups; fallback path when no results found
+  \item Hybrid retrieval: semantic search + BM25 fused with Reciprocal Rank Fusion; custom section-aware chunking; RAGAs evaluation pipeline
+  \item Streaming SSE via astream\_events; self-hosted on AWS EC2 with Docker, Nginx, Let's Encrypt. \href{https://chatbot.tifortunato.com}{chatbot.tifortunato.com} $|$ \href{https://github.com/tiagorcfortunato/ai-career-assistant}{GitHub}
 \end{itemize}}
 
 \cventry{2026}{Inspection Management API}{FastAPI · Groq Vision AI · LangChain · LangSmith · PostgreSQL · Docker}{Berlin}{}{
@@ -84,11 +84,7 @@ Production REST API that classifies inspection photos with Vision AI: upload an 
 \end{itemize}}
 
 \cventry{2025--2026}{Road Hazard Detection \& Prioritization: MSc Thesis}{YOLOv8 · PyTorch · Python · RDD2022}{Berlin}{}{
-Deep learning detection pipeline combined with a rule-based expert system for automated road maintenance prioritization on the RDD2022 dataset.
-\begin{itemize}
-  \item Best config (YOLOv8s): \textbf{mAP50 0.663, Precision 0.694, Recall 0.604}
-  \item Rule-based post-processing reduced noisy detections by \textbf{31.2\%}; every prioritization decision traceable to explicit, auditable rules
-\end{itemize}}
+Deep learning detection pipeline with rule-based expert system for automated road maintenance prioritization (RDD2022). Best config YOLOv8s: \textbf{mAP50 0.663, Precision 0.694, Recall 0.604}; rule-based post-processing reduced noisy detections by \textbf{31.2\%}.}
 
 % -----------------------------------------------------------------------
 \section{Experience}

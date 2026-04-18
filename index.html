@@ -590,7 +590,8 @@
         </div>
         <div class="hero-actions">
             <a href="mailto:tifortunato.eng@gmail.com" class="btn btn-primary">Get in touch</a>
-            <a href="Tiago_Fortunato_Resume.pdf" download class="btn btn-outline">Download CV</a>
+            <a href="Tiago_Fortunato_Resume.pdf" download class="btn btn-outline">CV (EN)</a>
+            <a href="Tiago_Fortunato_Lebenslauf.pdf" download class="btn btn-outline">Lebenslauf (DE)</a>
             <a href="https://linkedin.com/in/tiagorcfortunato" target="_blank" class="btn btn-outline">LinkedIn</a>
             <a href="https://github.com/tiagorcfortunato" target="_blank" class="btn btn-outline">GitHub</a>
         </div>
@@ -605,9 +606,9 @@
             <h2 class="section-title">Who I am</h2>
             <p class="about-text">
                 <strong>AI Application Engineer</strong> and <strong>Product Engineer</strong> based in Berlin, shipping <strong>AI-powered products</strong> end-to-end with <strong>LLMs</strong>, <strong>RAG</strong>, and modern web stacks. I build real production systems, not prototypes, and care about whether what I build actually solves the problem.<br><br>
-                I shipped <strong><a href="https://odys.com.br" target="_blank" style="color: var(--accent); text-decoration: none;">Odys</a></strong>, a live <strong>multi-tenant SaaS</strong> scheduling platform for Brazilian freelance professionals, as the sole developer. Full Next.js + TypeScript stack on Supabase, Stripe billing, self-hosted WhatsApp messaging via Evolution API on Railway, automated reminder flows via Supabase pg_cron, error monitoring with Sentry, and CI/CD on GitHub Actions.<br><br>
-                I also built a production <strong><a href="https://chatbot.tifortunato.com" target="_blank" style="color: var(--accent); text-decoration: none;">RAG career chatbot</a></strong> with hybrid retrieval (semantic + BM25 with Reciprocal Rank Fusion), custom section-aware chunking, streaming SSE responses via Groq (Llama 3.1), and a RAGAs evaluation pipeline. Self-hosted on AWS EC2 with Docker, Nginx, and Let's Encrypt HTTPS. And an <strong>Inspection Management API</strong> with autonomous <strong>Vision AI</strong> classification on FastAPI, JWT auth, comprehensive Pytest suite, structured LLM output via LangChain, and full observability through LangSmith.<br><br>
-                <strong>MSc Software Engineering</strong> (Berlin, 2026). Background in <strong>Mechanical Engineering</strong>. Daily user of <strong>Claude Code</strong> and agentic AI development workflows: my edge is shipping fast and owning outcomes from idea to production. <strong>Trilingual</strong>: Portuguese (native), English (fluent), German (B2.2). Open to <strong>AI Application Engineer</strong>, <strong>Product Engineer</strong>, <strong>AI Engineer</strong>, <strong>Solutions Engineer</strong>, or <strong>Founding Engineer</strong> roles.
+                I shipped <strong><a href="https://odys.com.br" target="_blank" style="color: var(--accent); text-decoration: none;">Odys</a></strong>, a live <strong>multi-tenant SaaS</strong> scheduling platform for Brazilian freelance professionals, as the sole developer. It features a <strong>Portuguese LLM intake layer</strong> (Groq) that parses WhatsApp messages into Zod-validated JSON, tool-calling with retry logic, and a deterministic fallback. Full Next.js + TypeScript stack on Supabase, Stripe + PIX billing with idempotent webhooks, self-hosted WhatsApp via Evolution API on Railway, automated reminders through Supabase pg_cron, Sentry, PostHog, and CI/CD on GitHub Actions.<br><br>
+                I also built a production <strong><a href="https://chatbot.tifortunato.com" target="_blank" style="color: var(--accent); text-decoration: none;">RAG career chatbot</a></strong>, migrated from LangChain to <strong>LangGraph</strong> (7 async nodes, conditional routing, typed state), with hybrid retrieval (semantic + BM25 with Reciprocal Rank Fusion), custom section-aware chunking, streaming SSE via Groq (Llama 3.1), and a RAGAs evaluation pipeline. Self-hosted on AWS EC2 with Docker, Nginx, and Let's Encrypt HTTPS. And an <strong>Inspection Management API</strong> with autonomous <strong>Vision AI</strong> classification on FastAPI, JWT auth, comprehensive Pytest suite, structured LLM output via LangChain, and full observability through LangSmith.<br><br>
+                <strong>MSc Software Engineering</strong> (Berlin, 2026). Background in <strong>Mechanical Engineering</strong>. Daily user of <strong>Claude Code</strong> and agentic AI development workflows: my edge is shipping fast and owning outcomes from idea to production. <strong>Trilingual</strong>: Portuguese (native), English (fluent), German (C1). Open to <strong>AI Application Engineer</strong>, <strong>Product Engineer</strong>, <strong>AI Engineer</strong>, <strong>Solutions Engineer</strong>, or <strong>Founding Engineer</strong> roles.
             </p>
         </div>
     </section>
@@ -643,6 +644,7 @@
                         <span class="skill-item">BM25</span>
                         <span class="skill-item">Semantic Search</span>
                         <span class="skill-item">LangChain</span>
+                        <span class="skill-item">LangGraph</span>
                         <span class="skill-item">ChromaDB</span>
                         <span class="skill-item">Groq</span>
                         <span class="skill-item">Llama</span>
@@ -728,16 +730,17 @@
                         <span class="project-name">Odys: Scheduling SaaS</span>
                         <span class="project-year">2026</span>
                     </div>
-                    <p class="project-desc">WhatsApp-first scheduling SaaS for Brazilian freelance professionals (therapists, personal trainers, salons). Clients book online, receive automatic WhatsApp reminders 24h before, and professionals manage everything from a dashboard. Live product at odys.com.br, currently in active validation with industry professionals before scaling marketing.</p>
+                    <p class="project-desc">WhatsApp-first scheduling SaaS for Brazilian freelance professionals (therapists, personal trainers, salons), with an AI intake layer that turns natural-language WhatsApp messages into bookings. Live product at odys.com.br, currently in active validation with industry professionals before scaling marketing.</p>
                     <ul class="project-bullets">
-                        <li>WhatsApp-native reminders via self-hosted Evolution API v2 on Railway, triggered by Supabase pg_cron (not a third-party bot)</li>
-                        <li>Multi-tenant architecture: each professional gets a public booking page at /p/[slug] with fully isolated data and configurable availability</li>
-                        <li>Stripe subscriptions + PIX with webhook handling; Supabase Auth; Drizzle ORM on PostgreSQL; resolved PgBouncer transaction mode compatibility</li>
-                        <li>Rate limiting with Upstash Redis; error monitoring with Sentry; transactional email via Resend</li>
-                        <li>Deployed on Vercel (app) + Railway (WhatsApp API Docker container); CI/CD via GitHub Actions</li>
+                        <li>AI intake (Groq LLM): parses Portuguese WhatsApp messages, extracts intent as Zod-validated JSON, proposes slots and books; custom prompt design, tool-calling, retry logic, and deterministic fallback built from scratch</li>
+                        <li>Multi-tenant architecture: each professional gets a public booking page at /p/[slug] with isolated data; plan-gated features (free/basic/pro/premium) with trial flow</li>
+                        <li>Stripe + PIX with idempotent webhook handling; Supabase Auth with email verification; Drizzle ORM on PostgreSQL; resolved PgBouncer transaction mode compatibility</li>
+                        <li>WhatsApp-native reminders via self-hosted Evolution API v2 on Railway, orchestrated by Supabase pg_cron with signature-verified webhooks</li>
+                        <li>Production maturity: rate limiting (Upstash Redis), Resend SMTP, Sentry, PostHog, type safety (TypeScript + Zod), CI/CD (GitHub Actions)</li>
                     </ul>
                     <div class="project-tools">
                         <span class="tag accent">Next.js 16</span>
+                        <span class="tag accent">Groq LLM</span>
                         <span class="tag">TypeScript</span>
                         <span class="tag">Supabase</span>
                         <span class="tag">Drizzle ORM</span>
@@ -759,18 +762,18 @@
                         <span class="project-name">AI Career Assistant: RAG Chatbot</span>
                         <span class="project-year">2026</span>
                     </div>
-                    <p class="project-desc">Production RAG chatbot where recruiters and hiring managers ask questions about my background, projects, and skills, and get answers grounded in a curated knowledge base. Self-hosted on AWS EC2.</p>
+                    <p class="project-desc">Production RAG chatbot where recruiters and hiring managers ask questions about my background, projects, and skills, and get answers grounded in a curated knowledge base. Migrated from LangChain to LangGraph. Self-hosted on AWS EC2.</p>
                     <ul class="project-bullets">
+                        <li>LangGraph StateGraph with 7 async nodes, conditional edges, and typed state: query enrichment, project routing, hybrid retrieve, context formatting, answer generation, follow-ups, plus a fallback path for empty results</li>
                         <li>Hybrid retrieval: semantic search + BM25 fused with Reciprocal Rank Fusion (RRF) for higher precision than either method alone</li>
                         <li>Custom section-aware chunking via font-size analysis: keeps semantically related content together for better retrieval quality</li>
-                        <li>Streaming SSE responses via Groq (Llama 3.1) with conversation history and suggested follow-up questions</li>
+                        <li>Streaming SSE responses via astream_events with Groq (Llama 3.1), conversation history, and suggested follow-up questions</li>
                         <li>RAGAs evaluation pipeline measuring faithfulness, answer relevance, context precision, and context recall</li>
-                        <li>FastAPI backend with LangChain and ChromaDB vector store; vanilla JS frontend; containerized with Docker</li>
-                        <li>Self-hosted on AWS EC2 with Nginx reverse proxy and Let's Encrypt HTTPS at chatbot.tifortunato.com</li>
+                        <li>FastAPI backend with ChromaDB vector store; vanilla JS frontend; containerized with Docker; self-hosted on AWS EC2 with Nginx reverse proxy and Let's Encrypt HTTPS</li>
                     </ul>
                     <div class="project-tools">
                         <span class="tag accent">FastAPI</span>
-                        <span class="tag accent">LangChain</span>
+                        <span class="tag accent">LangGraph</span>
                         <span class="tag accent">RAG</span>
                         <span class="tag accent">Hybrid Retrieval</span>
                         <span class="tag">ChromaDB</span>
@@ -1027,7 +1030,7 @@
                 </div>
                 <div class="language-card">
                     <div class="language-name">German</div>
-                    <div class="language-level">B2.2</div>
+                    <div class="language-level">C1</div>
                 </div>
             </div>
         </div>
@@ -1045,7 +1048,8 @@
             </p>
             <div class="contact-links">
                 <a href="mailto:tifortunato.eng@gmail.com" class="btn btn-primary">tifortunato.eng@gmail.com</a>
-                <a href="Tiago_Fortunato_Resume.pdf" download class="btn btn-outline">Download CV</a>
+                <a href="Tiago_Fortunato_Resume.pdf" download class="btn btn-outline">CV (EN)</a>
+                <a href="Tiago_Fortunato_Lebenslauf.pdf" download class="btn btn-outline">Lebenslauf (DE)</a>
                 <a href="https://linkedin.com/in/tiagorcfortunato" target="_blank" class="btn btn-outline">LinkedIn</a>
                 <a href="https://github.com/tiagorcfortunato" target="_blank" class="btn btn-outline">GitHub</a>
             </div>

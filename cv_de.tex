@@ -1,0 +1,117 @@
+%% Tiago Fortunato CV (Deutsch)
+%% Updated 2026
+
+\documentclass[11pt,a4paper,sans]{moderncv}
+
+\moderncvstyle{banking}
+\moderncvcolor{blue}
+
+\usepackage[scale=0.84]{geometry}
+\setlength{\footskip}{136.00005pt}
+\linespread{1.06}
+
+\ifxetexorluatex
+  \usepackage{fontspec}
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Ligatures=TeX}
+  \setmainfont{Latin Modern Roman}
+  \setsansfont{Latin Modern Sans}
+  \setmonofont{Latin Modern Mono}
+  \setmathfont{Latin Modern Math}
+\else
+  \usepackage[T1]{fontenc}
+  \usepackage{lmodern}
+\fi
+
+\usepackage[ngerman]{babel}
+
+% Personal data
+\name{Tiago}{Fortunato}
+\title{\texorpdfstring{AI Application Engineer $|$ Product Engineer $|$ SaaS \\ {\small Gründer von Odys · M.Sc. Software Engineering · LLMs · RAG · Vision AI}}{AI Application Engineer | Product Engineer | SaaS | Gründer von Odys | M.Sc. Software Engineering | LLMs | RAG | Vision AI}}
+\address{Berlin, Deutschland}
+\phone[mobile]{+49~172~238~9909}
+\email{tifortunato.eng@gmail.com}
+\social[linkedin]{tiagorcfortunato}
+\social[github]{tiagorcfortunato}
+\homepage{tifortunato.com}
+
+\begin{document}
+\makecvtitle
+\vspace{-3mm}
+
+% -----------------------------------------------------------------------
+\section{Profil}
+% -----------------------------------------------------------------------
+\cvitem{}{\textbf{AI Application Engineer} und \textbf{Product Engineer} in Berlin mit Fokus auf die End-to-End-Entwicklung KI-gestützter Produkte. \textbf{Odys} (\href{https://odys.com.br}{odys.com.br}) eigenständig von null bis Produktion entwickelt: portugiesischer LLM-Intake-Layer, selbst gehostete WhatsApp-Integration, Stripe/PIX-Billing, abgesichert und überwacht. Zusätzlich einen produktiven RAG Career Chatbot (\href{https://chatbot.tifortunato.com}{chatbot.tifortunato.com}) und eine Vision AI REST API entwickelt. \textbf{M.Sc. Software Engineering} (Berlin 2026). Täglicher Nutzer von \textbf{Claude Code} und agentischen KI-Workflows. Dreisprachig: Portugiesisch (Muttersprache), Englisch (fließend), Deutsch (C1).}
+
+% -----------------------------------------------------------------------
+\section{Kenntnisse}
+% -----------------------------------------------------------------------
+\cvitem{KI-gestützte Entwicklung}{\textbf{Claude Code}, Cursor, agentische Coding-Workflows, Prompt Engineering. Täglicher Einsatz zur produktiven Auslieferung von Code mit KI als Hebel.}
+\cvitem{KI- und LLM-Anwendungen}{LLMs, RAG Pipelines, Embeddings, Vektordatenbanken, LangChain, \textbf{LangGraph}, ChromaDB, Groq, Llama, Vision AI, LangSmith, RAGAs; hybrides Retrieval (semantisch + BM25), strukturierter LLM-Output, Prompt Engineering, Evaluation, Observability, Streaming SSE.}
+\cvitem{Backend und APIs}{Python, FastAPI, REST APIs, PostgreSQL, SQL, SQLAlchemy, Drizzle ORM, Pydantic, Alembic, JWT Auth, Pytest; saubere Architektur, Schema-Design und automatisierte Tests.}
+\cvitem{Full-Stack und SaaS}{TypeScript, JavaScript, React, Next.js, Tailwind, Supabase, Stripe, Resend, Upstash Redis; Multi-Tenant-SaaS, Abonnement-Billing, transaktionale E-Mails, Rate Limiting, Integration externer Dienste.}
+\cvitem{DevOps und Cloud}{Docker, GitHub Actions, CI/CD, AWS EC2, Nginx, Linux, Let's Encrypt, Railway, Vercel, Git; produktive Deployments, Containerisierung und HTTPS-gesicherte Cloud-Infrastruktur.}
+
+% -----------------------------------------------------------------------
+\section{Ausgewählte Projekte}
+% -----------------------------------------------------------------------
+
+\cventry{2026--heute}{Odys: Terminplanung-SaaS für Freiberufler}{Next.js 16 · TypeScript · Supabase · Stripe · Groq · Docker · Railway}{Berlin}{}{
+WhatsApp-first SaaS-Plattform mit AI-Intake-Layer: Kunden buchen per natürlicher Sprache oder Web-UI; Freiberufler verwalten Verfügbarkeit, Zahlungen und Termine über ein Dashboard. Live unter \href{https://odys.com.br}{odys.com.br}.
+\begin{itemize}
+  \item \textbf{AI-Intake (Groq LLM):} parst portugiesische WhatsApp-Nachrichten, extrahiert Intent als Zod-validiertes JSON, schlägt Slots vor und bucht; Prompt-Design, Tool-Calling, Retry-Logik und deterministischer Fallback eigenständig entwickelt
+  \item \textbf{Multi-Tenant-SaaS:} Buchungsseite pro Freiberufler (\texttt{/p/[slug]}); plan-basierte Features (free/basic/pro/premium) mit Trial-Flow; Stripe + PIX mit idempotentem Webhook-Handling; Supabase Auth mit E-Mail-Verifikation; Drizzle ORM auf PostgreSQL
+  \item \textbf{WhatsApp-Automatisierung:} Erinnerungen und Bestätigungen über selbst gehostete Evolution API v2 auf Railway, orchestriert durch Supabase \texttt{pg\_cron}; signatur-verifizierte Webhooks
+  \item \textbf{Produktionsreife:} Rate Limiting (Upstash Redis), Resend SMTP, Sentry, PostHog, Type Safety (TypeScript + Zod), CI/CD (GitHub Actions)
+\end{itemize}}
+
+\newpage
+
+\cventry{2026}{AI Career Assistant: RAG Chatbot}{FastAPI · LangGraph · ChromaDB · Groq · RAGAs · Docker · AWS EC2}{Berlin}{}{
+Produktiver RAG Chatbot, migriert von LangChain zu \textbf{LangGraph} mit 7 async Nodes, Conditional Routing und typisiertem State Management.
+\begin{itemize}
+  \item LangGraph StateGraph mit Conditional Edges: Query Enrichment, Projekt-Routing, hybrides Retrieval, Context-Formatierung, Antwortgenerierung, Follow-ups; Fallback-Pfad bei leeren Ergebnissen
+  \item Hybrides Retrieval (semantisch + BM25 via Reciprocal Rank Fusion) mit abschnittsbezogener Chunking-Strategie; RAGAs Evaluation Pipeline
+  \item Streaming SSE via astream\_events; selbst gehostet auf AWS EC2 mit Docker, Nginx, Let's Encrypt. \href{https://chatbot.tifortunato.com}{chatbot.tifortunato.com} $|$ \href{https://github.com/tiagorcfortunato/ai-career-assistant}{GitHub}
+\end{itemize}}
+
+\cventry{2026}{Inspection Management API}{FastAPI · Groq Vision AI · LangChain · LangSmith · PostgreSQL · Docker}{Berlin}{}{
+Produktive REST API zur Klassifizierung von Inspektionsfotos mit Vision AI: Bild hochladen, und das System liefert Schweregrad und Schadensart mit nachvollziehbarer Begründung.
+\begin{itemize}
+  \item Vision AI über Groq SDK; strukturierter LLM-Output mit LangChain; LangSmith für Observability; XAI-Begründungsfeld für Transparenz
+  \item JWT-Auth mit Admin-Rolle; umfassende Pytest-Suite für alle Endpunkte; CI/CD über GitHub Actions; Frontend-Dashboard mit Bild-Upload und KI-Status-Badges. \href{https://inspection-management-api.onrender.com/docs}{API Docs} $|$ \href{https://github.com/tiagorcfortunato/inspection-management-api}{GitHub}
+\end{itemize}}
+
+\cventry{2025--2026}{Road Hazard Detection \& Prioritization: Masterarbeit}{YOLOv8 · PyTorch · Python · RDD2022}{Berlin}{}{
+Deep-Learning-Detektionspipeline mit regelbasiertem Expertensystem zur automatisierten Priorisierung der Straßenwartung (RDD2022). Beste Konfiguration YOLOv8s: \textbf{mAP50 0.663, Precision 0.694, Recall 0.604}; regelbasiertes Post-Processing reduzierte fehlerhafte Detektionen um \textbf{31.2\%}.}
+
+% -----------------------------------------------------------------------
+\section{Berufserfahrung}
+% -----------------------------------------------------------------------
+
+\cventry{2026--heute}{Gründer und Full-Stack-Entwickler}{Odys · \href{https://odys.com.br}{odys.com.br}}{Berlin, Deutschland}{}{
+\begin{itemize}
+  \item Marktlücke identifiziert durch direkte Gespräche mit Freiberuflern, die Buchungen an manuelle WhatsApp-Abläufe verlieren
+  \item Vollständige Produkt-Ownership als alleiniger Entwickler: User Research, Produkt-Design, Architektur, Implementierung, Security-Hardening und produktive Inbetriebnahme
+  \item MVP ausgeliefert und basierend auf Interviews mit 8+ Freiberuflern iteriert; Produkt-Scope 2x verfeinert, um den Intake-Flow auf den tatsächlichen Engpass zu fokussieren
+\end{itemize}}
+
+\cventry{2019--2024}{Operations Manager}{Fortunato Joias, familieneigener Schmuckhersteller}{Brasilien}{}{Verantwortung für den operativen Betrieb eines kleinen Fertigungsunternehmens: Stakeholder-Alignment, Lieferantenverhandlungen, Produktionsplanung und End-to-End-Lieferzyklen. Fünf Jahre Ergebnisverantwortung vor dem professionellen Wechsel in die Softwareentwicklung; die Ownership-Mentalität übertrug sich direkt auf die Gründung eines SaaS.}
+
+% -----------------------------------------------------------------------
+\section{Bildungsweg}
+% -----------------------------------------------------------------------
+
+\cventry{2024--2026}{M.Sc. Software Engineering}{University of Europe for Applied Sciences}{Berlin, Deutschland}{}{}
+
+\cventry{2014--2016}{Austauschstudent, Maschinenbau}{Hochschule Wismar}{Deutschland}{}{}
+
+\cventry{2013--2018}{B.Sc. Maschinenbau}{UERJ}{Rio de Janeiro, Brasilien}{}{}
+
+% -----------------------------------------------------------------------
+\section{Sprachen}
+% -----------------------------------------------------------------------
+\cvitem{}{Portugiesisch (Muttersprache) · Englisch (fließend) · Deutsch (C1)}
+
+\end{document}
